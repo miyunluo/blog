@@ -10,7 +10,7 @@
 <meta name="keywords" content="fun">
 <meta property="og:type" content="article">
 <meta property="og:title" content="50行实现定时发送天气预报提醒邮件">
-<meta property="og:url" content="http://miyunluo.com/blog/2018/05/16/weathemail/index.html">
+<meta property="og:url" content="http://miyunluo.com/blogs/2018/05/16/weathemail/index.html">
 <meta property="og:site_name" content="miyunLuo">
 <meta property="og:description" content="“想不想每天给她/他发送一条天气提醒呢”  起因 魔都的天气，太魔性了…尤其是梅雨季 ios自带天气app无提醒，经常忘记查看。使用过 Mr.Weather、Colorful Pro，提醒又过多，导致通知栏里全是天气通知 需求其实很简单，一份简介明了又不扰人的天气提醒 使用邮件无需额外费用，比短信提醒易于实现，使用node.js更是十分简单   Setup使用node.js实现天气获取与邮件发送">
 <meta property="og:locale" content="default">
@@ -26,27 +26,27 @@
     
         
           
-              <link rel="shortcut icon" href="/images/favicon.ico">
+              <link rel="shortcut icon" href="/blog/images/favicon.ico">
           
         
         
           
-            <link rel="icon" type="image/png" href="/images/favicon-200x200.png" sizes="192x192">
+            <link rel="icon" type="image/png" href="/blog/images/favicon-200x200.png" sizes="192x192">
           
         
         
           
-            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+            <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon.png">
           
         
     
     <!-- title -->
     <title>50行实现定时发送天气预报提醒邮件</title>
     <!-- styles -->
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/blog/css/style.css">
     <!-- persian styles -->
     
-      <link rel="stylesheet" href="/css/rtl.css">
+      <link rel="stylesheet" href="/blog/css/rtl.css">
     
     <!-- rss -->
     
@@ -63,9 +63,9 @@
     <span id="nav">
       <ul>
          
-          <li><a href="/">Home</a></li>
+          <li><a href="/blog/">Home</a></li>
          
-          <li><a href="/archives/">Writing</a></li>
+          <li><a href="/blog/archives/">Writing</a></li>
         
       </ul>
     </span>
@@ -73,10 +73,10 @@
     <span id="actions">
       <ul>
         
-        <li><a class="icon" href="/2018/06/14/escpfromnetease/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        <li><a class="icon" href="/blog/2018/06/14/escpfromnetease/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
         
         
-        <li><a class="icon" href="/2018/05/06/NeuralArtisticStyle/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        <li><a class="icon" href="/blog/2018/05/06/NeuralArtisticStyle/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
         
         <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
         <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
@@ -89,16 +89,16 @@
     <br/>
     <div id="share" style="display: none">
       <ul>
-  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://miyunluo.com/blog/2018/05/16/weathemail/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=http://miyunluo.com/blog/2018/05/16/weathemail/&text=50行实现定时发送天气预报提醒邮件"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://miyunluo.com/blog/2018/05/16/weathemail/&title=50行实现定时发送天气预报提醒邮件"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://miyunluo.com/blog/2018/05/16/weathemail/&is_video=false&description=50行实现定时发送天气预报提醒邮件"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=50行实现定时发送天气预报提醒邮件&body=Check out this article: http://miyunluo.com/blog/2018/05/16/weathemail/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=http://miyunluo.com/blog/2018/05/16/weathemail/&title=50行实现定时发送天气预报提醒邮件"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=http://miyunluo.com/blog/2018/05/16/weathemail/&title=50行实现定时发送天气预报提醒邮件"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://miyunluo.com/blog/2018/05/16/weathemail/&title=50行实现定时发送天气预报提醒邮件"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=http://miyunluo.com/blog/2018/05/16/weathemail/&title=50行实现定时发送天气预报提醒邮件"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://miyunluo.com/blog/2018/05/16/weathemail/&name=50行实现定时发送天气预报提醒邮件&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://miyunluo.com/blogs/2018/05/16/weathemail/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://miyunluo.com/blogs/2018/05/16/weathemail/&text=50行实现定时发送天气预报提醒邮件"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://miyunluo.com/blogs/2018/05/16/weathemail/&title=50行实现定时发送天气预报提醒邮件"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://miyunluo.com/blogs/2018/05/16/weathemail/&is_video=false&description=50行实现定时发送天气预报提醒邮件"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=50行实现定时发送天气预报提醒邮件&body=Check out this article: http://miyunluo.com/blogs/2018/05/16/weathemail/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://miyunluo.com/blogs/2018/05/16/weathemail/&title=50行实现定时发送天气预报提醒邮件"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://miyunluo.com/blogs/2018/05/16/weathemail/&title=50行实现定时发送天气预报提醒邮件"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://miyunluo.com/blogs/2018/05/16/weathemail/&title=50行实现定时发送天气预报提醒邮件"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://miyunluo.com/blogs/2018/05/16/weathemail/&title=50行实现定时发送天气预报提醒邮件"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://miyunluo.com/blogs/2018/05/16/weathemail/&name=50行实现定时发送天气预报提醒邮件&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -133,7 +133,7 @@
       
     <div class="article-tag">
         <i class="fas fa-tag"></i>
-        <a class="tag-link" href="/tags/fun/">fun</a>
+        <a class="tag-link" href="/blog/tags/fun/">fun</a>
     </div>
 
 
@@ -235,9 +235,9 @@
     <div id="nav-footer" style="display: none">
       <ul>
          
-          <li><a href="/">Home</a></li>
+          <li><a href="/blog/">Home</a></li>
          
-          <li><a href="/archives/">Writing</a></li>
+          <li><a href="/blog/archives/">Writing</a></li>
         
       </ul>
     </div>
@@ -248,16 +248,16 @@
 
     <div id="share-footer" style="display: none">
       <ul>
-  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://miyunluo.com/blog/2018/05/16/weathemail/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=http://miyunluo.com/blog/2018/05/16/weathemail/&text=50行实现定时发送天气预报提醒邮件"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://miyunluo.com/blog/2018/05/16/weathemail/&title=50行实现定时发送天气预报提醒邮件"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://miyunluo.com/blog/2018/05/16/weathemail/&is_video=false&description=50行实现定时发送天气预报提醒邮件"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=50行实现定时发送天气预报提醒邮件&body=Check out this article: http://miyunluo.com/blog/2018/05/16/weathemail/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=http://miyunluo.com/blog/2018/05/16/weathemail/&title=50行实现定时发送天气预报提醒邮件"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=http://miyunluo.com/blog/2018/05/16/weathemail/&title=50行实现定时发送天气预报提醒邮件"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://miyunluo.com/blog/2018/05/16/weathemail/&title=50行实现定时发送天气预报提醒邮件"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=http://miyunluo.com/blog/2018/05/16/weathemail/&title=50行实现定时发送天气预报提醒邮件"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://miyunluo.com/blog/2018/05/16/weathemail/&name=50行实现定时发送天气预报提醒邮件&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://miyunluo.com/blogs/2018/05/16/weathemail/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://miyunluo.com/blogs/2018/05/16/weathemail/&text=50行实现定时发送天气预报提醒邮件"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://miyunluo.com/blogs/2018/05/16/weathemail/&title=50行实现定时发送天气预报提醒邮件"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://miyunluo.com/blogs/2018/05/16/weathemail/&is_video=false&description=50行实现定时发送天气预报提醒邮件"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=50行实现定时发送天气预报提醒邮件&body=Check out this article: http://miyunluo.com/blogs/2018/05/16/weathemail/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://miyunluo.com/blogs/2018/05/16/weathemail/&title=50行实现定时发送天气预报提醒邮件"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://miyunluo.com/blogs/2018/05/16/weathemail/&title=50行实现定时发送天气预报提醒邮件"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://miyunluo.com/blogs/2018/05/16/weathemail/&title=50行实现定时发送天气预报提醒邮件"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://miyunluo.com/blogs/2018/05/16/weathemail/&title=50行实现定时发送天气预报提醒邮件"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://miyunluo.com/blogs/2018/05/16/weathemail/&name=50行实现定时发送天气预报提醒邮件&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -281,9 +281,9 @@
     <nav>
       <ul>
          
-          <li><a href="/">Home</a></li>
+          <li><a href="/blog/">Home</a></li>
          
-          <li><a href="/archives/">Writing</a></li>
+          <li><a href="/blog/archives/">Writing</a></li>
         
       </ul>
     </nav>
@@ -293,13 +293,13 @@
 </body>
 </html>
 <!-- styles -->
-<link rel="stylesheet" href="/lib/font-awesome/css/fontawesome-all.min.css">
-<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+<link rel="stylesheet" href="/blog/lib/font-awesome/css/fontawesome-all.min.css">
+<link rel="stylesheet" href="/blog/lib/justified-gallery/css/justifiedGallery.min.css">
 
 <!-- jquery -->
-<script src="/lib/jquery/jquery.min.js"></script>
-<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
-<script src="/js/main.js"></script>
+<script src="/blog/lib/jquery/jquery.min.js"></script>
+<script src="/blog/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+<script src="/blog/js/main.js"></script>
 <!-- search -->
 
 <!-- Google Analytics -->

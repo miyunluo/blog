@@ -10,7 +10,7 @@
 <meta name="keywords" content="python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="pytorch自用笔记">
-<meta property="og:url" content="http://miyunluo.com/blog/2018/04/23/pytorchbg/index.html">
+<meta property="og:url" content="http://miyunluo.com/blogs/2018/04/23/pytorchbg/index.html">
 <meta property="og:site_name" content="miyunLuo">
 <meta property="og:description" content="“防止以后踩坑”  pytorch 0.4 较之前api有了很大变化 0.0 Tensor在pytorch 0.4 中 Tensor 和 Variable 合并 Tensor可以理解为一个多维矩阵，可以使用 .size() 显示大小，同时也可以和 numpy.array 转换  由于和Variable合并，requires_grad 和 autograd 成了 Tensor 的属性。 Tenso">
 <meta property="og:locale" content="default">
@@ -28,27 +28,27 @@
     
         
           
-              <link rel="shortcut icon" href="/images/favicon.ico">
+              <link rel="shortcut icon" href="/blog/images/favicon.ico">
           
         
         
           
-            <link rel="icon" type="image/png" href="/images/favicon-200x200.png" sizes="192x192">
+            <link rel="icon" type="image/png" href="/blog/images/favicon-200x200.png" sizes="192x192">
           
         
         
           
-            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+            <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon.png">
           
         
     
     <!-- title -->
     <title>pytorch自用笔记</title>
     <!-- styles -->
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/blog/css/style.css">
     <!-- persian styles -->
     
-      <link rel="stylesheet" href="/css/rtl.css">
+      <link rel="stylesheet" href="/blog/css/rtl.css">
     
     <!-- rss -->
     
@@ -65,9 +65,9 @@
     <span id="nav">
       <ul>
          
-          <li><a href="/">Home</a></li>
+          <li><a href="/blog/">Home</a></li>
          
-          <li><a href="/archives/">Writing</a></li>
+          <li><a href="/blog/archives/">Writing</a></li>
         
       </ul>
     </span>
@@ -75,10 +75,10 @@
     <span id="actions">
       <ul>
         
-        <li><a class="icon" href="/2018/04/24/DNNyoutube2016/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        <li><a class="icon" href="/blog/2018/04/24/DNNyoutube2016/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
         
         
-        <li><a class="icon" href="/2017/12/10/jun0ctf/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        <li><a class="icon" href="/blog/2017/12/10/jun0ctf/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
         
         <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
         <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
@@ -91,16 +91,16 @@
     <br/>
     <div id="share" style="display: none">
       <ul>
-  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://miyunluo.com/blog/2018/04/23/pytorchbg/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=http://miyunluo.com/blog/2018/04/23/pytorchbg/&text=pytorch自用笔记"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://miyunluo.com/blog/2018/04/23/pytorchbg/&title=pytorch自用笔记"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://miyunluo.com/blog/2018/04/23/pytorchbg/&is_video=false&description=pytorch自用笔记"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=pytorch自用笔记&body=Check out this article: http://miyunluo.com/blog/2018/04/23/pytorchbg/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=http://miyunluo.com/blog/2018/04/23/pytorchbg/&title=pytorch自用笔记"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=http://miyunluo.com/blog/2018/04/23/pytorchbg/&title=pytorch自用笔记"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://miyunluo.com/blog/2018/04/23/pytorchbg/&title=pytorch自用笔记"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=http://miyunluo.com/blog/2018/04/23/pytorchbg/&title=pytorch自用笔记"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://miyunluo.com/blog/2018/04/23/pytorchbg/&name=pytorch自用笔记&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://miyunluo.com/blogs/2018/04/23/pytorchbg/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://miyunluo.com/blogs/2018/04/23/pytorchbg/&text=pytorch自用笔记"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://miyunluo.com/blogs/2018/04/23/pytorchbg/&title=pytorch自用笔记"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://miyunluo.com/blogs/2018/04/23/pytorchbg/&is_video=false&description=pytorch自用笔记"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=pytorch自用笔记&body=Check out this article: http://miyunluo.com/blogs/2018/04/23/pytorchbg/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://miyunluo.com/blogs/2018/04/23/pytorchbg/&title=pytorch自用笔记"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://miyunluo.com/blogs/2018/04/23/pytorchbg/&title=pytorch自用笔记"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://miyunluo.com/blogs/2018/04/23/pytorchbg/&title=pytorch自用笔记"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://miyunluo.com/blogs/2018/04/23/pytorchbg/&title=pytorch自用笔记"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://miyunluo.com/blogs/2018/04/23/pytorchbg/&name=pytorch自用笔记&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -135,7 +135,7 @@
       
     <div class="article-tag">
         <i class="fas fa-tag"></i>
-        <a class="tag-link" href="/tags/python/">python</a>
+        <a class="tag-link" href="/blog/tags/python/">python</a>
     </div>
 
 
@@ -251,9 +251,9 @@
     <div id="nav-footer" style="display: none">
       <ul>
          
-          <li><a href="/">Home</a></li>
+          <li><a href="/blog/">Home</a></li>
          
-          <li><a href="/archives/">Writing</a></li>
+          <li><a href="/blog/archives/">Writing</a></li>
         
       </ul>
     </div>
@@ -264,16 +264,16 @@
 
     <div id="share-footer" style="display: none">
       <ul>
-  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://miyunluo.com/blog/2018/04/23/pytorchbg/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=http://miyunluo.com/blog/2018/04/23/pytorchbg/&text=pytorch自用笔记"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://miyunluo.com/blog/2018/04/23/pytorchbg/&title=pytorch自用笔记"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://miyunluo.com/blog/2018/04/23/pytorchbg/&is_video=false&description=pytorch自用笔记"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=pytorch自用笔记&body=Check out this article: http://miyunluo.com/blog/2018/04/23/pytorchbg/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=http://miyunluo.com/blog/2018/04/23/pytorchbg/&title=pytorch自用笔记"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=http://miyunluo.com/blog/2018/04/23/pytorchbg/&title=pytorch自用笔记"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://miyunluo.com/blog/2018/04/23/pytorchbg/&title=pytorch自用笔记"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=http://miyunluo.com/blog/2018/04/23/pytorchbg/&title=pytorch自用笔记"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://miyunluo.com/blog/2018/04/23/pytorchbg/&name=pytorch自用笔记&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://miyunluo.com/blogs/2018/04/23/pytorchbg/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://miyunluo.com/blogs/2018/04/23/pytorchbg/&text=pytorch自用笔记"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://miyunluo.com/blogs/2018/04/23/pytorchbg/&title=pytorch自用笔记"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://miyunluo.com/blogs/2018/04/23/pytorchbg/&is_video=false&description=pytorch自用笔记"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=pytorch自用笔记&body=Check out this article: http://miyunluo.com/blogs/2018/04/23/pytorchbg/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://miyunluo.com/blogs/2018/04/23/pytorchbg/&title=pytorch自用笔记"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://miyunluo.com/blogs/2018/04/23/pytorchbg/&title=pytorch自用笔记"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://miyunluo.com/blogs/2018/04/23/pytorchbg/&title=pytorch自用笔记"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://miyunluo.com/blogs/2018/04/23/pytorchbg/&title=pytorch自用笔记"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://miyunluo.com/blogs/2018/04/23/pytorchbg/&name=pytorch自用笔记&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -297,9 +297,9 @@
     <nav>
       <ul>
          
-          <li><a href="/">Home</a></li>
+          <li><a href="/blog/">Home</a></li>
          
-          <li><a href="/archives/">Writing</a></li>
+          <li><a href="/blog/archives/">Writing</a></li>
         
       </ul>
     </nav>
@@ -309,13 +309,13 @@
 </body>
 </html>
 <!-- styles -->
-<link rel="stylesheet" href="/lib/font-awesome/css/fontawesome-all.min.css">
-<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+<link rel="stylesheet" href="/blog/lib/font-awesome/css/fontawesome-all.min.css">
+<link rel="stylesheet" href="/blog/lib/justified-gallery/css/justifiedGallery.min.css">
 
 <!-- jquery -->
-<script src="/lib/jquery/jquery.min.js"></script>
-<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
-<script src="/js/main.js"></script>
+<script src="/blog/lib/jquery/jquery.min.js"></script>
+<script src="/blog/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+<script src="/blog/js/main.js"></script>
 <!-- search -->
 
 <!-- Google Analytics -->

@@ -10,7 +10,7 @@
 <meta name="keywords" content="编程珠玑">
 <meta property="og:type" content="article">
 <meta property="og:title" content="啊哈！算法">
-<meta property="og:url" content="http://miyunluo.com/blog/2016/10/15/BCZJ2/index.html">
+<meta property="og:url" content="http://miyunluo.com/blogs/2016/10/15/BCZJ2/index.html">
 <meta property="og:site_name" content="miyunLuo">
 <meta property="og:description" content="“字字珠玑”  前言书是某github大神推荐的，买了有一段时间了，却一直没看，今天静下心来读一读。  正文第二章很短，在本章开头提出了三个问题，就在此对这三个问题进行讨论和解决。 问题A 给定一个最多包含 40亿个随机排列的 32位整数的顺序文件，找出一个不在文件中的 32位整数。（为什么一定有数缺失）在具有足够内存的情况下，如何解决该问题？如果有几个外部的“临时”文件可用，但是仅有几百字节的">
 <meta property="og:locale" content="default">
@@ -22,27 +22,27 @@
     
         
           
-              <link rel="shortcut icon" href="/images/favicon.ico">
+              <link rel="shortcut icon" href="/blog/images/favicon.ico">
           
         
         
           
-            <link rel="icon" type="image/png" href="/images/favicon-200x200.png" sizes="192x192">
+            <link rel="icon" type="image/png" href="/blog/images/favicon-200x200.png" sizes="192x192">
           
         
         
           
-            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+            <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon.png">
           
         
     
     <!-- title -->
     <title>啊哈！算法</title>
     <!-- styles -->
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/blog/css/style.css">
     <!-- persian styles -->
     
-      <link rel="stylesheet" href="/css/rtl.css">
+      <link rel="stylesheet" href="/blog/css/rtl.css">
     
     <!-- rss -->
     
@@ -59,9 +59,9 @@
     <span id="nav">
       <ul>
          
-          <li><a href="/">Home</a></li>
+          <li><a href="/blog/">Home</a></li>
          
-          <li><a href="/archives/">Writing</a></li>
+          <li><a href="/blog/archives/">Writing</a></li>
         
       </ul>
     </span>
@@ -69,10 +69,10 @@
     <span id="actions">
       <ul>
         
-        <li><a class="icon" href="/2016/10/21/BCZJ34/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        <li><a class="icon" href="/blog/2016/10/21/BCZJ34/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
         
         
-        <li><a class="icon" href="/2016/10/12/Lucene/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        <li><a class="icon" href="/blog/2016/10/12/Lucene/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
         
         <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
         <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
@@ -85,16 +85,16 @@
     <br/>
     <div id="share" style="display: none">
       <ul>
-  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://miyunluo.com/blog/2016/10/15/BCZJ2/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=http://miyunluo.com/blog/2016/10/15/BCZJ2/&text=啊哈！算法"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://miyunluo.com/blog/2016/10/15/BCZJ2/&title=啊哈！算法"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://miyunluo.com/blog/2016/10/15/BCZJ2/&is_video=false&description=啊哈！算法"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=啊哈！算法&body=Check out this article: http://miyunluo.com/blog/2016/10/15/BCZJ2/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=http://miyunluo.com/blog/2016/10/15/BCZJ2/&title=啊哈！算法"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=http://miyunluo.com/blog/2016/10/15/BCZJ2/&title=啊哈！算法"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://miyunluo.com/blog/2016/10/15/BCZJ2/&title=啊哈！算法"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=http://miyunluo.com/blog/2016/10/15/BCZJ2/&title=啊哈！算法"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://miyunluo.com/blog/2016/10/15/BCZJ2/&name=啊哈！算法&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://miyunluo.com/blogs/2016/10/15/BCZJ2/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://miyunluo.com/blogs/2016/10/15/BCZJ2/&text=啊哈！算法"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://miyunluo.com/blogs/2016/10/15/BCZJ2/&title=啊哈！算法"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://miyunluo.com/blogs/2016/10/15/BCZJ2/&is_video=false&description=啊哈！算法"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=啊哈！算法&body=Check out this article: http://miyunluo.com/blogs/2016/10/15/BCZJ2/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://miyunluo.com/blogs/2016/10/15/BCZJ2/&title=啊哈！算法"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://miyunluo.com/blogs/2016/10/15/BCZJ2/&title=啊哈！算法"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://miyunluo.com/blogs/2016/10/15/BCZJ2/&title=啊哈！算法"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://miyunluo.com/blogs/2016/10/15/BCZJ2/&title=啊哈！算法"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://miyunluo.com/blogs/2016/10/15/BCZJ2/&name=啊哈！算法&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -129,7 +129,7 @@
       
     <div class="article-tag">
         <i class="fas fa-tag"></i>
-        <a class="tag-link" href="/tags/编程珠玑/">编程珠玑</a>
+        <a class="tag-link" href="/blog/tags/编程珠玑/">编程珠玑</a>
     </div>
 
 
@@ -188,9 +188,9 @@
     <div id="nav-footer" style="display: none">
       <ul>
          
-          <li><a href="/">Home</a></li>
+          <li><a href="/blog/">Home</a></li>
          
-          <li><a href="/archives/">Writing</a></li>
+          <li><a href="/blog/archives/">Writing</a></li>
         
       </ul>
     </div>
@@ -201,16 +201,16 @@
 
     <div id="share-footer" style="display: none">
       <ul>
-  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://miyunluo.com/blog/2016/10/15/BCZJ2/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=http://miyunluo.com/blog/2016/10/15/BCZJ2/&text=啊哈！算法"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://miyunluo.com/blog/2016/10/15/BCZJ2/&title=啊哈！算法"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://miyunluo.com/blog/2016/10/15/BCZJ2/&is_video=false&description=啊哈！算法"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=啊哈！算法&body=Check out this article: http://miyunluo.com/blog/2016/10/15/BCZJ2/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=http://miyunluo.com/blog/2016/10/15/BCZJ2/&title=啊哈！算法"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=http://miyunluo.com/blog/2016/10/15/BCZJ2/&title=啊哈！算法"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://miyunluo.com/blog/2016/10/15/BCZJ2/&title=啊哈！算法"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=http://miyunluo.com/blog/2016/10/15/BCZJ2/&title=啊哈！算法"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://miyunluo.com/blog/2016/10/15/BCZJ2/&name=啊哈！算法&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://miyunluo.com/blogs/2016/10/15/BCZJ2/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://miyunluo.com/blogs/2016/10/15/BCZJ2/&text=啊哈！算法"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://miyunluo.com/blogs/2016/10/15/BCZJ2/&title=啊哈！算法"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://miyunluo.com/blogs/2016/10/15/BCZJ2/&is_video=false&description=啊哈！算法"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=啊哈！算法&body=Check out this article: http://miyunluo.com/blogs/2016/10/15/BCZJ2/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://miyunluo.com/blogs/2016/10/15/BCZJ2/&title=啊哈！算法"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://miyunluo.com/blogs/2016/10/15/BCZJ2/&title=啊哈！算法"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://miyunluo.com/blogs/2016/10/15/BCZJ2/&title=啊哈！算法"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://miyunluo.com/blogs/2016/10/15/BCZJ2/&title=啊哈！算法"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://miyunluo.com/blogs/2016/10/15/BCZJ2/&name=啊哈！算法&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -234,9 +234,9 @@
     <nav>
       <ul>
          
-          <li><a href="/">Home</a></li>
+          <li><a href="/blog/">Home</a></li>
          
-          <li><a href="/archives/">Writing</a></li>
+          <li><a href="/blog/archives/">Writing</a></li>
         
       </ul>
     </nav>
@@ -246,13 +246,13 @@
 </body>
 </html>
 <!-- styles -->
-<link rel="stylesheet" href="/lib/font-awesome/css/fontawesome-all.min.css">
-<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+<link rel="stylesheet" href="/blog/lib/font-awesome/css/fontawesome-all.min.css">
+<link rel="stylesheet" href="/blog/lib/justified-gallery/css/justifiedGallery.min.css">
 
 <!-- jquery -->
-<script src="/lib/jquery/jquery.min.js"></script>
-<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
-<script src="/js/main.js"></script>
+<script src="/blog/lib/jquery/jquery.min.js"></script>
+<script src="/blog/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+<script src="/blog/js/main.js"></script>
 <!-- search -->
 
 <!-- Google Analytics -->
