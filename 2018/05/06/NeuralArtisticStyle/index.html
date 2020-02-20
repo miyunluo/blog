@@ -10,7 +10,7 @@
 <meta name="keywords" content="Python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="A Neural Algorithm of Artistic Style">
-<meta property="og:url" content="http://miyunluo.com/blogs/2018/05/06/NeuralArtisticStyle/index.html">
+<meta property="og:url" content="http://miyunluo.com/blog/2018/05/06/NeuralArtisticStyle/index.html">
 <meta property="og:site_name" content="miyunLuo">
 <meta property="og:description" content="“Deep style transfer”  大概是两年前，有一篇照片风格迁移的论文火的不得了，名字记不得了，文中的例子是将图片迁移为梵高风格的画风，当时觉得这东西很厉害，而且还有一个叫Prisma的应用在移动端实现了图片的风格迁移，各种画风随意生成，也是厉害的不行。 今天这篇论文应该算是此类问题的开篇鼻祖，看完觉得基础原理其实也挺简单的。 Overview所谓风格迁移，就是一张图片A作为输入，">
 <meta property="og:locale" content="default">
@@ -95,16 +95,16 @@
     <br/>
     <div id="share" style="display: none">
       <ul>
-  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://miyunluo.com/blogs/2018/05/06/NeuralArtisticStyle/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=http://miyunluo.com/blogs/2018/05/06/NeuralArtisticStyle/&text=A Neural Algorithm of Artistic Style"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://miyunluo.com/blogs/2018/05/06/NeuralArtisticStyle/&title=A Neural Algorithm of Artistic Style"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://miyunluo.com/blogs/2018/05/06/NeuralArtisticStyle/&is_video=false&description=A Neural Algorithm of Artistic Style"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=A Neural Algorithm of Artistic Style&body=Check out this article: http://miyunluo.com/blogs/2018/05/06/NeuralArtisticStyle/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=http://miyunluo.com/blogs/2018/05/06/NeuralArtisticStyle/&title=A Neural Algorithm of Artistic Style"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=http://miyunluo.com/blogs/2018/05/06/NeuralArtisticStyle/&title=A Neural Algorithm of Artistic Style"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://miyunluo.com/blogs/2018/05/06/NeuralArtisticStyle/&title=A Neural Algorithm of Artistic Style"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=http://miyunluo.com/blogs/2018/05/06/NeuralArtisticStyle/&title=A Neural Algorithm of Artistic Style"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://miyunluo.com/blogs/2018/05/06/NeuralArtisticStyle/&name=A Neural Algorithm of Artistic Style&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://miyunluo.com/blog/2018/05/06/NeuralArtisticStyle/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://miyunluo.com/blog/2018/05/06/NeuralArtisticStyle/&text=A Neural Algorithm of Artistic Style"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://miyunluo.com/blog/2018/05/06/NeuralArtisticStyle/&title=A Neural Algorithm of Artistic Style"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://miyunluo.com/blog/2018/05/06/NeuralArtisticStyle/&is_video=false&description=A Neural Algorithm of Artistic Style"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=A Neural Algorithm of Artistic Style&body=Check out this article: http://miyunluo.com/blog/2018/05/06/NeuralArtisticStyle/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://miyunluo.com/blog/2018/05/06/NeuralArtisticStyle/&title=A Neural Algorithm of Artistic Style"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://miyunluo.com/blog/2018/05/06/NeuralArtisticStyle/&title=A Neural Algorithm of Artistic Style"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://miyunluo.com/blog/2018/05/06/NeuralArtisticStyle/&title=A Neural Algorithm of Artistic Style"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://miyunluo.com/blog/2018/05/06/NeuralArtisticStyle/&title=A Neural Algorithm of Artistic Style"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://miyunluo.com/blog/2018/05/06/NeuralArtisticStyle/&name=A Neural Algorithm of Artistic Style&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -227,16 +227,16 @@
 
     <div id="share-footer" style="display: none">
       <ul>
-  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://miyunluo.com/blogs/2018/05/06/NeuralArtisticStyle/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=http://miyunluo.com/blogs/2018/05/06/NeuralArtisticStyle/&text=A Neural Algorithm of Artistic Style"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://miyunluo.com/blogs/2018/05/06/NeuralArtisticStyle/&title=A Neural Algorithm of Artistic Style"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://miyunluo.com/blogs/2018/05/06/NeuralArtisticStyle/&is_video=false&description=A Neural Algorithm of Artistic Style"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=A Neural Algorithm of Artistic Style&body=Check out this article: http://miyunluo.com/blogs/2018/05/06/NeuralArtisticStyle/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=http://miyunluo.com/blogs/2018/05/06/NeuralArtisticStyle/&title=A Neural Algorithm of Artistic Style"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=http://miyunluo.com/blogs/2018/05/06/NeuralArtisticStyle/&title=A Neural Algorithm of Artistic Style"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://miyunluo.com/blogs/2018/05/06/NeuralArtisticStyle/&title=A Neural Algorithm of Artistic Style"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=http://miyunluo.com/blogs/2018/05/06/NeuralArtisticStyle/&title=A Neural Algorithm of Artistic Style"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://miyunluo.com/blogs/2018/05/06/NeuralArtisticStyle/&name=A Neural Algorithm of Artistic Style&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://miyunluo.com/blog/2018/05/06/NeuralArtisticStyle/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://miyunluo.com/blog/2018/05/06/NeuralArtisticStyle/&text=A Neural Algorithm of Artistic Style"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://miyunluo.com/blog/2018/05/06/NeuralArtisticStyle/&title=A Neural Algorithm of Artistic Style"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://miyunluo.com/blog/2018/05/06/NeuralArtisticStyle/&is_video=false&description=A Neural Algorithm of Artistic Style"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=A Neural Algorithm of Artistic Style&body=Check out this article: http://miyunluo.com/blog/2018/05/06/NeuralArtisticStyle/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://miyunluo.com/blog/2018/05/06/NeuralArtisticStyle/&title=A Neural Algorithm of Artistic Style"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://miyunluo.com/blog/2018/05/06/NeuralArtisticStyle/&title=A Neural Algorithm of Artistic Style"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://miyunluo.com/blog/2018/05/06/NeuralArtisticStyle/&title=A Neural Algorithm of Artistic Style"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://miyunluo.com/blog/2018/05/06/NeuralArtisticStyle/&title=A Neural Algorithm of Artistic Style"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://miyunluo.com/blog/2018/05/06/NeuralArtisticStyle/&name=A Neural Algorithm of Artistic Style&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
     </div>

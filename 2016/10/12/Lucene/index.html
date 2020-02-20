@@ -10,7 +10,7 @@
 <meta name="keywords" content="Lucene">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Lucene6.1初级笔记与Demo">
-<meta property="og:url" content="http://miyunluo.com/blogs/2016/10/12/Lucene/index.html">
+<meta property="og:url" content="http://miyunluo.com/blog/2016/10/12/Lucene/index.html">
 <meta property="og:site_name" content="miyunLuo">
 <meta property="og:description" content="“似乎什么也没写”  前言暑期参加了一个只有三个人的宏大项目，一个人写爬虫，一个人写Lucene，一个我也不知道做了什么。很不凑巧，我就是写Lucene的那个。之前基本没写过java，Lucene也是第一次接触，不过也算是短时间内完成了，功能上比较简陋。今天刚结束了这个项目莫名其妙的一个答辩，写点基础的，给那些像我一样刚刚接触的同学。  正文Lucene是一个全文检索框架，功能异常强大，可以进行">
 <meta property="og:locale" content="default">
@@ -87,16 +87,16 @@
     <br/>
     <div id="share" style="display: none">
       <ul>
-  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://miyunluo.com/blogs/2016/10/12/Lucene/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=http://miyunluo.com/blogs/2016/10/12/Lucene/&text=Lucene6.1初级笔记与Demo"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://miyunluo.com/blogs/2016/10/12/Lucene/&title=Lucene6.1初级笔记与Demo"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://miyunluo.com/blogs/2016/10/12/Lucene/&is_video=false&description=Lucene6.1初级笔记与Demo"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=Lucene6.1初级笔记与Demo&body=Check out this article: http://miyunluo.com/blogs/2016/10/12/Lucene/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=http://miyunluo.com/blogs/2016/10/12/Lucene/&title=Lucene6.1初级笔记与Demo"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=http://miyunluo.com/blogs/2016/10/12/Lucene/&title=Lucene6.1初级笔记与Demo"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://miyunluo.com/blogs/2016/10/12/Lucene/&title=Lucene6.1初级笔记与Demo"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=http://miyunluo.com/blogs/2016/10/12/Lucene/&title=Lucene6.1初级笔记与Demo"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://miyunluo.com/blogs/2016/10/12/Lucene/&name=Lucene6.1初级笔记与Demo&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://miyunluo.com/blog/2016/10/12/Lucene/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://miyunluo.com/blog/2016/10/12/Lucene/&text=Lucene6.1初级笔记与Demo"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://miyunluo.com/blog/2016/10/12/Lucene/&title=Lucene6.1初级笔记与Demo"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://miyunluo.com/blog/2016/10/12/Lucene/&is_video=false&description=Lucene6.1初级笔记与Demo"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Lucene6.1初级笔记与Demo&body=Check out this article: http://miyunluo.com/blog/2016/10/12/Lucene/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://miyunluo.com/blog/2016/10/12/Lucene/&title=Lucene6.1初级笔记与Demo"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://miyunluo.com/blog/2016/10/12/Lucene/&title=Lucene6.1初级笔记与Demo"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://miyunluo.com/blog/2016/10/12/Lucene/&title=Lucene6.1初级笔记与Demo"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://miyunluo.com/blog/2016/10/12/Lucene/&title=Lucene6.1初级笔记与Demo"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://miyunluo.com/blog/2016/10/12/Lucene/&name=Lucene6.1初级笔记与Demo&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -180,16 +180,16 @@
 
     <div id="share-footer" style="display: none">
       <ul>
-  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://miyunluo.com/blogs/2016/10/12/Lucene/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=http://miyunluo.com/blogs/2016/10/12/Lucene/&text=Lucene6.1初级笔记与Demo"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://miyunluo.com/blogs/2016/10/12/Lucene/&title=Lucene6.1初级笔记与Demo"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://miyunluo.com/blogs/2016/10/12/Lucene/&is_video=false&description=Lucene6.1初级笔记与Demo"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=Lucene6.1初级笔记与Demo&body=Check out this article: http://miyunluo.com/blogs/2016/10/12/Lucene/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=http://miyunluo.com/blogs/2016/10/12/Lucene/&title=Lucene6.1初级笔记与Demo"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=http://miyunluo.com/blogs/2016/10/12/Lucene/&title=Lucene6.1初级笔记与Demo"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://miyunluo.com/blogs/2016/10/12/Lucene/&title=Lucene6.1初级笔记与Demo"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=http://miyunluo.com/blogs/2016/10/12/Lucene/&title=Lucene6.1初级笔记与Demo"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://miyunluo.com/blogs/2016/10/12/Lucene/&name=Lucene6.1初级笔记与Demo&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://miyunluo.com/blog/2016/10/12/Lucene/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://miyunluo.com/blog/2016/10/12/Lucene/&text=Lucene6.1初级笔记与Demo"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://miyunluo.com/blog/2016/10/12/Lucene/&title=Lucene6.1初级笔记与Demo"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://miyunluo.com/blog/2016/10/12/Lucene/&is_video=false&description=Lucene6.1初级笔记与Demo"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Lucene6.1初级笔记与Demo&body=Check out this article: http://miyunluo.com/blog/2016/10/12/Lucene/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://miyunluo.com/blog/2016/10/12/Lucene/&title=Lucene6.1初级笔记与Demo"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://miyunluo.com/blog/2016/10/12/Lucene/&title=Lucene6.1初级笔记与Demo"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://miyunluo.com/blog/2016/10/12/Lucene/&title=Lucene6.1初级笔记与Demo"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://miyunluo.com/blog/2016/10/12/Lucene/&title=Lucene6.1初级笔记与Demo"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://miyunluo.com/blog/2016/10/12/Lucene/&name=Lucene6.1初级笔记与Demo&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
     </div>

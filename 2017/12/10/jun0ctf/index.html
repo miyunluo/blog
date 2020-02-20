@@ -10,7 +10,7 @@
 <meta name="keywords" content="CTF">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Junior 0CTF 2017 WriteUp (部分)">
-<meta property="og:url" content="http://miyunluo.com/blogs/2017/12/10/jun0ctf/index.html">
+<meta property="og:url" content="http://miyunluo.com/blog/2017/12/10/jun0ctf/index.html">
 <meta property="og:site_name" content="miyunLuo">
 <meta property="og:description" content="“flag{php_is_best_language_:P}”  前言SJTU 0ops 举办的0CTF校内交流赛，12月9号到10号。部分题目索引如下（文中涉及的文件下载[链接] QQ Group |Mystery Numbers |Easy Traffic Analyze |AES-serverbabyrsa |Shatter Sha512!|Penetrate In |Evababyre|">
 <meta property="og:locale" content="default">
@@ -110,16 +110,16 @@
     <br/>
     <div id="share" style="display: none">
       <ul>
-  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://miyunluo.com/blogs/2017/12/10/jun0ctf/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=http://miyunluo.com/blogs/2017/12/10/jun0ctf/&text=Junior 0CTF 2017 WriteUp (部分)"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://miyunluo.com/blogs/2017/12/10/jun0ctf/&title=Junior 0CTF 2017 WriteUp (部分)"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://miyunluo.com/blogs/2017/12/10/jun0ctf/&is_video=false&description=Junior 0CTF 2017 WriteUp (部分)"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=Junior 0CTF 2017 WriteUp (部分)&body=Check out this article: http://miyunluo.com/blogs/2017/12/10/jun0ctf/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=http://miyunluo.com/blogs/2017/12/10/jun0ctf/&title=Junior 0CTF 2017 WriteUp (部分)"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=http://miyunluo.com/blogs/2017/12/10/jun0ctf/&title=Junior 0CTF 2017 WriteUp (部分)"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://miyunluo.com/blogs/2017/12/10/jun0ctf/&title=Junior 0CTF 2017 WriteUp (部分)"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=http://miyunluo.com/blogs/2017/12/10/jun0ctf/&title=Junior 0CTF 2017 WriteUp (部分)"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://miyunluo.com/blogs/2017/12/10/jun0ctf/&name=Junior 0CTF 2017 WriteUp (部分)&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://miyunluo.com/blog/2017/12/10/jun0ctf/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://miyunluo.com/blog/2017/12/10/jun0ctf/&text=Junior 0CTF 2017 WriteUp (部分)"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://miyunluo.com/blog/2017/12/10/jun0ctf/&title=Junior 0CTF 2017 WriteUp (部分)"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://miyunluo.com/blog/2017/12/10/jun0ctf/&is_video=false&description=Junior 0CTF 2017 WriteUp (部分)"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Junior 0CTF 2017 WriteUp (部分)&body=Check out this article: http://miyunluo.com/blog/2017/12/10/jun0ctf/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://miyunluo.com/blog/2017/12/10/jun0ctf/&title=Junior 0CTF 2017 WriteUp (部分)"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://miyunluo.com/blog/2017/12/10/jun0ctf/&title=Junior 0CTF 2017 WriteUp (部分)"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://miyunluo.com/blog/2017/12/10/jun0ctf/&title=Junior 0CTF 2017 WriteUp (部分)"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://miyunluo.com/blog/2017/12/10/jun0ctf/&title=Junior 0CTF 2017 WriteUp (部分)"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://miyunluo.com/blog/2017/12/10/jun0ctf/&name=Junior 0CTF 2017 WriteUp (部分)&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -323,16 +323,16 @@
 
     <div id="share-footer" style="display: none">
       <ul>
-  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://miyunluo.com/blogs/2017/12/10/jun0ctf/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=http://miyunluo.com/blogs/2017/12/10/jun0ctf/&text=Junior 0CTF 2017 WriteUp (部分)"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://miyunluo.com/blogs/2017/12/10/jun0ctf/&title=Junior 0CTF 2017 WriteUp (部分)"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://miyunluo.com/blogs/2017/12/10/jun0ctf/&is_video=false&description=Junior 0CTF 2017 WriteUp (部分)"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=Junior 0CTF 2017 WriteUp (部分)&body=Check out this article: http://miyunluo.com/blogs/2017/12/10/jun0ctf/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=http://miyunluo.com/blogs/2017/12/10/jun0ctf/&title=Junior 0CTF 2017 WriteUp (部分)"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=http://miyunluo.com/blogs/2017/12/10/jun0ctf/&title=Junior 0CTF 2017 WriteUp (部分)"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://miyunluo.com/blogs/2017/12/10/jun0ctf/&title=Junior 0CTF 2017 WriteUp (部分)"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=http://miyunluo.com/blogs/2017/12/10/jun0ctf/&title=Junior 0CTF 2017 WriteUp (部分)"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://miyunluo.com/blogs/2017/12/10/jun0ctf/&name=Junior 0CTF 2017 WriteUp (部分)&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://miyunluo.com/blog/2017/12/10/jun0ctf/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://miyunluo.com/blog/2017/12/10/jun0ctf/&text=Junior 0CTF 2017 WriteUp (部分)"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://miyunluo.com/blog/2017/12/10/jun0ctf/&title=Junior 0CTF 2017 WriteUp (部分)"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://miyunluo.com/blog/2017/12/10/jun0ctf/&is_video=false&description=Junior 0CTF 2017 WriteUp (部分)"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Junior 0CTF 2017 WriteUp (部分)&body=Check out this article: http://miyunluo.com/blog/2017/12/10/jun0ctf/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://miyunluo.com/blog/2017/12/10/jun0ctf/&title=Junior 0CTF 2017 WriteUp (部分)"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://miyunluo.com/blog/2017/12/10/jun0ctf/&title=Junior 0CTF 2017 WriteUp (部分)"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://miyunluo.com/blog/2017/12/10/jun0ctf/&title=Junior 0CTF 2017 WriteUp (部分)"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://miyunluo.com/blog/2017/12/10/jun0ctf/&title=Junior 0CTF 2017 WriteUp (部分)"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://miyunluo.com/blog/2017/12/10/jun0ctf/&name=Junior 0CTF 2017 WriteUp (部分)&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
     </div>

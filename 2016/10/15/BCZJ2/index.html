@@ -10,7 +10,7 @@
 <meta name="keywords" content="编程珠玑">
 <meta property="og:type" content="article">
 <meta property="og:title" content="啊哈！算法">
-<meta property="og:url" content="http://miyunluo.com/blogs/2016/10/15/BCZJ2/index.html">
+<meta property="og:url" content="http://miyunluo.com/blog/2016/10/15/BCZJ2/index.html">
 <meta property="og:site_name" content="miyunLuo">
 <meta property="og:description" content="“字字珠玑”  前言书是某github大神推荐的，买了有一段时间了，却一直没看，今天静下心来读一读。  正文第二章很短，在本章开头提出了三个问题，就在此对这三个问题进行讨论和解决。 问题A 给定一个最多包含 40亿个随机排列的 32位整数的顺序文件，找出一个不在文件中的 32位整数。（为什么一定有数缺失）在具有足够内存的情况下，如何解决该问题？如果有几个外部的“临时”文件可用，但是仅有几百字节的">
 <meta property="og:locale" content="default">
@@ -85,16 +85,16 @@
     <br/>
     <div id="share" style="display: none">
       <ul>
-  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://miyunluo.com/blogs/2016/10/15/BCZJ2/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=http://miyunluo.com/blogs/2016/10/15/BCZJ2/&text=啊哈！算法"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://miyunluo.com/blogs/2016/10/15/BCZJ2/&title=啊哈！算法"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://miyunluo.com/blogs/2016/10/15/BCZJ2/&is_video=false&description=啊哈！算法"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=啊哈！算法&body=Check out this article: http://miyunluo.com/blogs/2016/10/15/BCZJ2/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=http://miyunluo.com/blogs/2016/10/15/BCZJ2/&title=啊哈！算法"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=http://miyunluo.com/blogs/2016/10/15/BCZJ2/&title=啊哈！算法"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://miyunluo.com/blogs/2016/10/15/BCZJ2/&title=啊哈！算法"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=http://miyunluo.com/blogs/2016/10/15/BCZJ2/&title=啊哈！算法"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://miyunluo.com/blogs/2016/10/15/BCZJ2/&name=啊哈！算法&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://miyunluo.com/blog/2016/10/15/BCZJ2/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://miyunluo.com/blog/2016/10/15/BCZJ2/&text=啊哈！算法"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://miyunluo.com/blog/2016/10/15/BCZJ2/&title=啊哈！算法"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://miyunluo.com/blog/2016/10/15/BCZJ2/&is_video=false&description=啊哈！算法"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=啊哈！算法&body=Check out this article: http://miyunluo.com/blog/2016/10/15/BCZJ2/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://miyunluo.com/blog/2016/10/15/BCZJ2/&title=啊哈！算法"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://miyunluo.com/blog/2016/10/15/BCZJ2/&title=啊哈！算法"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://miyunluo.com/blog/2016/10/15/BCZJ2/&title=啊哈！算法"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://miyunluo.com/blog/2016/10/15/BCZJ2/&title=啊哈！算法"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://miyunluo.com/blog/2016/10/15/BCZJ2/&name=啊哈！算法&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -201,16 +201,16 @@
 
     <div id="share-footer" style="display: none">
       <ul>
-  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://miyunluo.com/blogs/2016/10/15/BCZJ2/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=http://miyunluo.com/blogs/2016/10/15/BCZJ2/&text=啊哈！算法"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://miyunluo.com/blogs/2016/10/15/BCZJ2/&title=啊哈！算法"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://miyunluo.com/blogs/2016/10/15/BCZJ2/&is_video=false&description=啊哈！算法"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=啊哈！算法&body=Check out this article: http://miyunluo.com/blogs/2016/10/15/BCZJ2/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=http://miyunluo.com/blogs/2016/10/15/BCZJ2/&title=啊哈！算法"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=http://miyunluo.com/blogs/2016/10/15/BCZJ2/&title=啊哈！算法"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://miyunluo.com/blogs/2016/10/15/BCZJ2/&title=啊哈！算法"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=http://miyunluo.com/blogs/2016/10/15/BCZJ2/&title=啊哈！算法"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://miyunluo.com/blogs/2016/10/15/BCZJ2/&name=啊哈！算法&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://miyunluo.com/blog/2016/10/15/BCZJ2/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://miyunluo.com/blog/2016/10/15/BCZJ2/&text=啊哈！算法"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://miyunluo.com/blog/2016/10/15/BCZJ2/&title=啊哈！算法"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://miyunluo.com/blog/2016/10/15/BCZJ2/&is_video=false&description=啊哈！算法"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=啊哈！算法&body=Check out this article: http://miyunluo.com/blog/2016/10/15/BCZJ2/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://miyunluo.com/blog/2016/10/15/BCZJ2/&title=啊哈！算法"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://miyunluo.com/blog/2016/10/15/BCZJ2/&title=啊哈！算法"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://miyunluo.com/blog/2016/10/15/BCZJ2/&title=啊哈！算法"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://miyunluo.com/blog/2016/10/15/BCZJ2/&title=啊哈！算法"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://miyunluo.com/blog/2016/10/15/BCZJ2/&name=啊哈！算法&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
     </div>

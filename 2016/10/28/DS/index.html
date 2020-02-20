@@ -10,7 +10,7 @@
 <meta name="keywords" content="Algorithm">
 <meta property="og:type" content="article">
 <meta property="og:title" content="基于 Deterministic Select 的快速选择">
-<meta property="og:url" content="http://miyunluo.com/blogs/2016/10/28/DS/index.html">
+<meta property="og:url" content="http://miyunluo.com/blog/2016/10/28/DS/index.html">
 <meta property="og:site_name" content="miyunLuo">
 <meta property="og:description" content="“可参考《算法导论 第三版》第123页”  前言算法老师 Dominik 在 week5 最后一节课快结束时讲到，当时比较匆忙，在此做以整理，尽量使说明通俗易懂。 这个算法用于求一个无序数组中的第k大数，并且可以保证最坏情况下时间复杂度为 O(n)。在本文最后会对这一时间复杂度进行说明。  正文寻找第k大的数，这是个看起来十分简单的问题，最简单的想法，把数组排个序，然后输出第k个。那么对于排序算">
 <meta property="og:locale" content="default">
@@ -89,16 +89,16 @@
     <br/>
     <div id="share" style="display: none">
       <ul>
-  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://miyunluo.com/blogs/2016/10/28/DS/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=http://miyunluo.com/blogs/2016/10/28/DS/&text=基于 Deterministic Select 的快速选择"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://miyunluo.com/blogs/2016/10/28/DS/&title=基于 Deterministic Select 的快速选择"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://miyunluo.com/blogs/2016/10/28/DS/&is_video=false&description=基于 Deterministic Select 的快速选择"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=基于 Deterministic Select 的快速选择&body=Check out this article: http://miyunluo.com/blogs/2016/10/28/DS/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=http://miyunluo.com/blogs/2016/10/28/DS/&title=基于 Deterministic Select 的快速选择"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=http://miyunluo.com/blogs/2016/10/28/DS/&title=基于 Deterministic Select 的快速选择"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://miyunluo.com/blogs/2016/10/28/DS/&title=基于 Deterministic Select 的快速选择"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=http://miyunluo.com/blogs/2016/10/28/DS/&title=基于 Deterministic Select 的快速选择"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://miyunluo.com/blogs/2016/10/28/DS/&name=基于 Deterministic Select 的快速选择&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://miyunluo.com/blog/2016/10/28/DS/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://miyunluo.com/blog/2016/10/28/DS/&text=基于 Deterministic Select 的快速选择"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://miyunluo.com/blog/2016/10/28/DS/&title=基于 Deterministic Select 的快速选择"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://miyunluo.com/blog/2016/10/28/DS/&is_video=false&description=基于 Deterministic Select 的快速选择"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=基于 Deterministic Select 的快速选择&body=Check out this article: http://miyunluo.com/blog/2016/10/28/DS/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://miyunluo.com/blog/2016/10/28/DS/&title=基于 Deterministic Select 的快速选择"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://miyunluo.com/blog/2016/10/28/DS/&title=基于 Deterministic Select 的快速选择"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://miyunluo.com/blog/2016/10/28/DS/&title=基于 Deterministic Select 的快速选择"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://miyunluo.com/blog/2016/10/28/DS/&title=基于 Deterministic Select 的快速选择"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://miyunluo.com/blog/2016/10/28/DS/&name=基于 Deterministic Select 的快速选择&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -211,16 +211,16 @@
 
     <div id="share-footer" style="display: none">
       <ul>
-  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://miyunluo.com/blogs/2016/10/28/DS/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=http://miyunluo.com/blogs/2016/10/28/DS/&text=基于 Deterministic Select 的快速选择"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://miyunluo.com/blogs/2016/10/28/DS/&title=基于 Deterministic Select 的快速选择"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://miyunluo.com/blogs/2016/10/28/DS/&is_video=false&description=基于 Deterministic Select 的快速选择"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=基于 Deterministic Select 的快速选择&body=Check out this article: http://miyunluo.com/blogs/2016/10/28/DS/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=http://miyunluo.com/blogs/2016/10/28/DS/&title=基于 Deterministic Select 的快速选择"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=http://miyunluo.com/blogs/2016/10/28/DS/&title=基于 Deterministic Select 的快速选择"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://miyunluo.com/blogs/2016/10/28/DS/&title=基于 Deterministic Select 的快速选择"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=http://miyunluo.com/blogs/2016/10/28/DS/&title=基于 Deterministic Select 的快速选择"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://miyunluo.com/blogs/2016/10/28/DS/&name=基于 Deterministic Select 的快速选择&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://miyunluo.com/blog/2016/10/28/DS/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://miyunluo.com/blog/2016/10/28/DS/&text=基于 Deterministic Select 的快速选择"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://miyunluo.com/blog/2016/10/28/DS/&title=基于 Deterministic Select 的快速选择"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://miyunluo.com/blog/2016/10/28/DS/&is_video=false&description=基于 Deterministic Select 的快速选择"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=基于 Deterministic Select 的快速选择&body=Check out this article: http://miyunluo.com/blog/2016/10/28/DS/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://miyunluo.com/blog/2016/10/28/DS/&title=基于 Deterministic Select 的快速选择"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://miyunluo.com/blog/2016/10/28/DS/&title=基于 Deterministic Select 的快速选择"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://miyunluo.com/blog/2016/10/28/DS/&title=基于 Deterministic Select 的快速选择"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://miyunluo.com/blog/2016/10/28/DS/&title=基于 Deterministic Select 的快速选择"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://miyunluo.com/blog/2016/10/28/DS/&name=基于 Deterministic Select 的快速选择&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
     </div>

@@ -10,7 +10,7 @@
 <meta name="keywords" content="Python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Install Python and Pip without Root">
-<meta property="og:url" content="http://miyunluo.com/blogs/2017/08/29/pyworoot/index.html">
+<meta property="og:url" content="http://miyunluo.com/blog/2017/08/29/pyworoot/index.html">
 <meta property="og:site_name" content="miyunLuo">
 <meta property="og:description" content="“配环境什么的最烦了。”  前言使用Linux最坏的情况就是没有root权限，然而这种情况普遍存在于ssh到服务器的时候。当然不赋予root权限是出于安全性的考虑，此时我的脑海中又浮现出那个场景…那日秋风萧瑟，残阳滴血，红铜铁马，万古如昨，tian哥以super_user的身份敲下了enter，那一键荡气回肠，然后老师的服务器就宕机了。咳咳，扯远了。。 且说我遇到的问题是，需要登录的服务器是一个">
 <meta property="og:locale" content="default">
@@ -85,16 +85,16 @@
     <br/>
     <div id="share" style="display: none">
       <ul>
-  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://miyunluo.com/blogs/2017/08/29/pyworoot/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=http://miyunluo.com/blogs/2017/08/29/pyworoot/&text=Install Python and Pip without Root"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://miyunluo.com/blogs/2017/08/29/pyworoot/&title=Install Python and Pip without Root"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://miyunluo.com/blogs/2017/08/29/pyworoot/&is_video=false&description=Install Python and Pip without Root"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=Install Python and Pip without Root&body=Check out this article: http://miyunluo.com/blogs/2017/08/29/pyworoot/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=http://miyunluo.com/blogs/2017/08/29/pyworoot/&title=Install Python and Pip without Root"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=http://miyunluo.com/blogs/2017/08/29/pyworoot/&title=Install Python and Pip without Root"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://miyunluo.com/blogs/2017/08/29/pyworoot/&title=Install Python and Pip without Root"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=http://miyunluo.com/blogs/2017/08/29/pyworoot/&title=Install Python and Pip without Root"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://miyunluo.com/blogs/2017/08/29/pyworoot/&name=Install Python and Pip without Root&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://miyunluo.com/blog/2017/08/29/pyworoot/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://miyunluo.com/blog/2017/08/29/pyworoot/&text=Install Python and Pip without Root"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://miyunluo.com/blog/2017/08/29/pyworoot/&title=Install Python and Pip without Root"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://miyunluo.com/blog/2017/08/29/pyworoot/&is_video=false&description=Install Python and Pip without Root"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Install Python and Pip without Root&body=Check out this article: http://miyunluo.com/blog/2017/08/29/pyworoot/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://miyunluo.com/blog/2017/08/29/pyworoot/&title=Install Python and Pip without Root"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://miyunluo.com/blog/2017/08/29/pyworoot/&title=Install Python and Pip without Root"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://miyunluo.com/blog/2017/08/29/pyworoot/&title=Install Python and Pip without Root"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://miyunluo.com/blog/2017/08/29/pyworoot/&title=Install Python and Pip without Root"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://miyunluo.com/blog/2017/08/29/pyworoot/&name=Install Python and Pip without Root&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -195,16 +195,16 @@
 
     <div id="share-footer" style="display: none">
       <ul>
-  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://miyunluo.com/blogs/2017/08/29/pyworoot/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=http://miyunluo.com/blogs/2017/08/29/pyworoot/&text=Install Python and Pip without Root"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://miyunluo.com/blogs/2017/08/29/pyworoot/&title=Install Python and Pip without Root"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://miyunluo.com/blogs/2017/08/29/pyworoot/&is_video=false&description=Install Python and Pip without Root"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=Install Python and Pip without Root&body=Check out this article: http://miyunluo.com/blogs/2017/08/29/pyworoot/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=http://miyunluo.com/blogs/2017/08/29/pyworoot/&title=Install Python and Pip without Root"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=http://miyunluo.com/blogs/2017/08/29/pyworoot/&title=Install Python and Pip without Root"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://miyunluo.com/blogs/2017/08/29/pyworoot/&title=Install Python and Pip without Root"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=http://miyunluo.com/blogs/2017/08/29/pyworoot/&title=Install Python and Pip without Root"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://miyunluo.com/blogs/2017/08/29/pyworoot/&name=Install Python and Pip without Root&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://miyunluo.com/blog/2017/08/29/pyworoot/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://miyunluo.com/blog/2017/08/29/pyworoot/&text=Install Python and Pip without Root"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://miyunluo.com/blog/2017/08/29/pyworoot/&title=Install Python and Pip without Root"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://miyunluo.com/blog/2017/08/29/pyworoot/&is_video=false&description=Install Python and Pip without Root"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Install Python and Pip without Root&body=Check out this article: http://miyunluo.com/blog/2017/08/29/pyworoot/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://miyunluo.com/blog/2017/08/29/pyworoot/&title=Install Python and Pip without Root"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://miyunluo.com/blog/2017/08/29/pyworoot/&title=Install Python and Pip without Root"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://miyunluo.com/blog/2017/08/29/pyworoot/&title=Install Python and Pip without Root"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://miyunluo.com/blog/2017/08/29/pyworoot/&title=Install Python and Pip without Root"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://miyunluo.com/blog/2017/08/29/pyworoot/&name=Install Python and Pip without Root&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
     </div>

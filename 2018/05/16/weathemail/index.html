@@ -10,7 +10,7 @@
 <meta name="keywords" content="fun">
 <meta property="og:type" content="article">
 <meta property="og:title" content="50行实现定时发送天气预报提醒邮件">
-<meta property="og:url" content="http://miyunluo.com/blogs/2018/05/16/weathemail/index.html">
+<meta property="og:url" content="http://miyunluo.com/blog/2018/05/16/weathemail/index.html">
 <meta property="og:site_name" content="miyunLuo">
 <meta property="og:description" content="“想不想每天给她/他发送一条天气提醒呢”  起因 魔都的天气，太魔性了…尤其是梅雨季 ios自带天气app无提醒，经常忘记查看。使用过 Mr.Weather、Colorful Pro，提醒又过多，导致通知栏里全是天气通知 需求其实很简单，一份简介明了又不扰人的天气提醒 使用邮件无需额外费用，比短信提醒易于实现，使用node.js更是十分简单   Setup使用node.js实现天气获取与邮件发送">
 <meta property="og:locale" content="default">
@@ -89,16 +89,16 @@
     <br/>
     <div id="share" style="display: none">
       <ul>
-  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://miyunluo.com/blogs/2018/05/16/weathemail/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=http://miyunluo.com/blogs/2018/05/16/weathemail/&text=50行实现定时发送天气预报提醒邮件"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://miyunluo.com/blogs/2018/05/16/weathemail/&title=50行实现定时发送天气预报提醒邮件"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://miyunluo.com/blogs/2018/05/16/weathemail/&is_video=false&description=50行实现定时发送天气预报提醒邮件"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=50行实现定时发送天气预报提醒邮件&body=Check out this article: http://miyunluo.com/blogs/2018/05/16/weathemail/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=http://miyunluo.com/blogs/2018/05/16/weathemail/&title=50行实现定时发送天气预报提醒邮件"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=http://miyunluo.com/blogs/2018/05/16/weathemail/&title=50行实现定时发送天气预报提醒邮件"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://miyunluo.com/blogs/2018/05/16/weathemail/&title=50行实现定时发送天气预报提醒邮件"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=http://miyunluo.com/blogs/2018/05/16/weathemail/&title=50行实现定时发送天气预报提醒邮件"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://miyunluo.com/blogs/2018/05/16/weathemail/&name=50行实现定时发送天气预报提醒邮件&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://miyunluo.com/blog/2018/05/16/weathemail/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://miyunluo.com/blog/2018/05/16/weathemail/&text=50行实现定时发送天气预报提醒邮件"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://miyunluo.com/blog/2018/05/16/weathemail/&title=50行实现定时发送天气预报提醒邮件"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://miyunluo.com/blog/2018/05/16/weathemail/&is_video=false&description=50行实现定时发送天气预报提醒邮件"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=50行实现定时发送天气预报提醒邮件&body=Check out this article: http://miyunluo.com/blog/2018/05/16/weathemail/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://miyunluo.com/blog/2018/05/16/weathemail/&title=50行实现定时发送天气预报提醒邮件"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://miyunluo.com/blog/2018/05/16/weathemail/&title=50行实现定时发送天气预报提醒邮件"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://miyunluo.com/blog/2018/05/16/weathemail/&title=50行实现定时发送天气预报提醒邮件"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://miyunluo.com/blog/2018/05/16/weathemail/&title=50行实现定时发送天气预报提醒邮件"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://miyunluo.com/blog/2018/05/16/weathemail/&name=50行实现定时发送天气预报提醒邮件&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -248,16 +248,16 @@
 
     <div id="share-footer" style="display: none">
       <ul>
-  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://miyunluo.com/blogs/2018/05/16/weathemail/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=http://miyunluo.com/blogs/2018/05/16/weathemail/&text=50行实现定时发送天气预报提醒邮件"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://miyunluo.com/blogs/2018/05/16/weathemail/&title=50行实现定时发送天气预报提醒邮件"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://miyunluo.com/blogs/2018/05/16/weathemail/&is_video=false&description=50行实现定时发送天气预报提醒邮件"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=50行实现定时发送天气预报提醒邮件&body=Check out this article: http://miyunluo.com/blogs/2018/05/16/weathemail/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=http://miyunluo.com/blogs/2018/05/16/weathemail/&title=50行实现定时发送天气预报提醒邮件"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=http://miyunluo.com/blogs/2018/05/16/weathemail/&title=50行实现定时发送天气预报提醒邮件"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://miyunluo.com/blogs/2018/05/16/weathemail/&title=50行实现定时发送天气预报提醒邮件"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=http://miyunluo.com/blogs/2018/05/16/weathemail/&title=50行实现定时发送天气预报提醒邮件"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://miyunluo.com/blogs/2018/05/16/weathemail/&name=50行实现定时发送天气预报提醒邮件&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://miyunluo.com/blog/2018/05/16/weathemail/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://miyunluo.com/blog/2018/05/16/weathemail/&text=50行实现定时发送天气预报提醒邮件"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://miyunluo.com/blog/2018/05/16/weathemail/&title=50行实现定时发送天气预报提醒邮件"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://miyunluo.com/blog/2018/05/16/weathemail/&is_video=false&description=50行实现定时发送天气预报提醒邮件"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=50行实现定时发送天气预报提醒邮件&body=Check out this article: http://miyunluo.com/blog/2018/05/16/weathemail/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://miyunluo.com/blog/2018/05/16/weathemail/&title=50行实现定时发送天气预报提醒邮件"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://miyunluo.com/blog/2018/05/16/weathemail/&title=50行实现定时发送天气预报提醒邮件"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://miyunluo.com/blog/2018/05/16/weathemail/&title=50行实现定时发送天气预报提醒邮件"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://miyunluo.com/blog/2018/05/16/weathemail/&title=50行实现定时发送天气预报提醒邮件"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://miyunluo.com/blog/2018/05/16/weathemail/&name=50行实现定时发送天气预报提醒邮件&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
