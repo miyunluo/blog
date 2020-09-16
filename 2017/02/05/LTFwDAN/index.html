@@ -14,12 +14,12 @@
 <meta property="og:site_name" content="miyunLuo">
 <meta property="og:description" content="“It’s a good habite to take notes”  前言You can find the related paper from the following address. Learning Transferable Features with Deep Adaptation Networks(1) How transferable are features in deep">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://miyunluo.com/images/in-post/post-blog-DANmdoel.png">
-<meta property="og:updated_time" content="2018-04-23T12:03:10.000Z">
+<meta property="og:image" content="http://miyunluo.com/blog/images/in-post/post-blog-DANmdoel.png">
+<meta property="og:updated_time" content="2020-09-16T04:13:11.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Learning Transferanle Features with Deep Adapation Networks">
 <meta name="twitter:description" content="“It’s a good habite to take notes”  前言You can find the related paper from the following address. Learning Transferable Features with Deep Adaptation Networks(1) How transferable are features in deep">
-<meta name="twitter:image" content="http://miyunluo.com/images/in-post/post-blog-DANmdoel.png">
+<meta name="twitter:image" content="http://miyunluo.com/blog/images/in-post/post-blog-DANmdoel.png">
     
     
         
@@ -171,7 +171,7 @@
 <li>Type two error: 弃真</li>
 </ul>
 <hr>
-<h3 id="Model-DAN"><a href="#Model-DAN" class="headerlink" title="Model(DAN)"></a>Model(DAN)</h3><p><img src="/images/in-post/post-blog-DANmdoel.png" alt="img"></p>
+<h3 id="Model-DAN"><a href="#Model-DAN" class="headerlink" title="Model(DAN)"></a>Model(DAN)</h3><p><img src="/blog/images/in-post/post-blog-DANmdoel.png" alt="img"></p>
 <p>The basic architecture is <strong>AlexNet</strong>, which is comprised of five convolutional layers (conv1-conv5) and three fully connected layers (fc6-fc8). The output layer is softmax.</p>
 <p>Because features in lower convolutional layers are general, the author starts with an AlexNet model pertained on ImageNet 2012 and copies conv1-conv3 from pertained model, then fine-tunes conv4-conv5 and fully connected layers fc6-fc7, and trains classifier layer fc8, both via backpropagation.</p>
 <p>The author adds an MK-MMD-based multi-layer adaptation regularizer to CNN risk so that the distributions on the source and target become similar under the hidden representations of fully connected layers fc6-fc8.</p>

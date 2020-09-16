@@ -14,13 +14,13 @@
 <meta property="og:site_name" content="miyunLuo">
 <meta property="og:description" content="“2016 youtube 推荐系统”  每天都在用网易云音乐听歌和youtube看视频。这篇论文GG介绍了其使用深度学习在youtube推荐系统的应用。 Overview系统的结构比较直观，分为 candidate generation 与 ranking。Candidate generation 负责从海量的数据集中 (百万级)，粗选一部分视频出来，接下来ranking负责对选出的视频 (百">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://miyunluo.com/images/in-post/post-blog-DNNytbmatch.png">
-<meta property="og:image" content="http://miyunluo.com/images/in-post/post-blog-DNNytbrank.png">
-<meta property="og:updated_time" content="2018-04-24T12:29:14.000Z">
+<meta property="og:image" content="http://miyunluo.com/blog/images/in-post/post-blog-DNNytbmatch.png">
+<meta property="og:image" content="http://miyunluo.com/blog/images/in-post/post-blog-DNNytbrank.png">
+<meta property="og:updated_time" content="2020-09-16T04:16:17.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Deep Neural Networks for YouTube Recommendations">
 <meta name="twitter:description" content="“2016 youtube 推荐系统”  每天都在用网易云音乐听歌和youtube看视频。这篇论文GG介绍了其使用深度学习在youtube推荐系统的应用。 Overview系统的结构比较直观，分为 candidate generation 与 ranking。Candidate generation 负责从海量的数据集中 (百万级)，粗选一部分视频出来，接下来ranking负责对选出的视频 (百">
-<meta name="twitter:image" content="http://miyunluo.com/images/in-post/post-blog-DNNytbmatch.png">
+<meta name="twitter:image" content="http://miyunluo.com/blog/images/in-post/post-blog-DNNytbmatch.png">
     
     
         
@@ -149,7 +149,7 @@
 <h2 id="Candidate-generation"><a href="#Candidate-generation" class="headerlink" title="Candidate generation"></a>Candidate generation</h2><p>作者将推荐问题视为一个超大分类问题 (extreme multiclass classification)。问题为，在时刻$t$，为用户$U$，在上下文$C$，从视频库$V$中预测视频$i$的类别。</p>
 <p>$$P(w_t=i|U,C)=\frac{e^{v_iu}}{\sum_{j\in V}e^{v_ju}}$$</p>
 <p>上式为一个softmax，$u\in R^N$是&lt;用户，上下文&gt;的高位embedding，$v_j\in R^N$是视频$j$的embedding。DNN需要做的，就是学习&lt;用户，上下文&gt;的高位embedding，$u$.</p>
-<p><img src="/images/in-post/post-blog-DNNytbmatch.png" alt="img"></p>
+<p><img src="/blog/images/in-post/post-blog-DNNytbmatch.png" alt="img"></p>
 <h3 id="Feature"><a href="#Feature" class="headerlink" title="Feature"></a>Feature</h3><ul>
 <li><p>Embedded video</p>
 </li>
@@ -162,7 +162,7 @@
 </li>
 </ul>
 <h2 id="Ranking"><a href="#Ranking" class="headerlink" title="Ranking"></a>Ranking</h2><p>Ranking 的模型与 cadidate generation的基本一致，不同之处是training变成了weighted logistic regression对视频打分。</p>
-<p><img src="/images/in-post/post-blog-DNNytbrank.png" alt="img"></p>
+<p><img src="/blog/images/in-post/post-blog-DNNytbrank.png" alt="img"></p>
 <p>作者的目标是预测期望的观看时长，有点击的是正样本，使用观看时长加权，无点击的为负样本，使用单位权重unit weight (应该是1)。LR 学习到的odds (一个事件的<strong>发生比</strong>（英语：Odds）是该事件发生和不发生的比率)为：</p>
 <p>$$\frac{\sum{T_i}}{N-k}=\frac{\frac{\sum{T_i}}{N}}{\frac{N-k}{N}}=\frac{E[T]}{1-P}=\frac{E[T](1+P)}{1-P^2}$$</p>
 <p>$N$是总样本数，$k$是正样本数，$T_i$是第$i$个正样本的观看时长，$P$是点击率。实际中$P$较小，这样odds接近于$E[T]$，即期望观看时长。</p>

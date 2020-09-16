@@ -14,16 +14,16 @@
 <meta property="og:site_name" content="miyunLuo">
 <meta property="og:description" content="“防止以后踩坑”  pytorch 0.4 较之前api有了很大变化 0.0 Tensor在pytorch 0.4 中 Tensor 和 Variable 合并 Tensor可以理解为一个多维矩阵，可以使用 .size() 显示大小，同时也可以和 numpy.array 转换  由于和Variable合并，requires_grad 和 autograd 成了 Tensor 的属性。 Tenso">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://miyunluo.com/images/in-post/post-blog-torch0.png">
-<meta property="og:image" content="http://miyunluo.com/images/in-post/post-blog-torch1.png">
-<meta property="og:image" content="http://miyunluo.com/images/in-post/post-blog-torch2.png">
-<meta property="og:image" content="http://miyunluo.com/images/in-post/post-blog-torch3.png">
-<meta property="og:image" content="http://miyunluo.com/images/in-post/post-blog-torch4.png">
-<meta property="og:updated_time" content="2019-02-06T02:40:22.000Z">
+<meta property="og:image" content="http://miyunluo.com/blog/images/in-post/post-blog-torch0.png">
+<meta property="og:image" content="http://miyunluo.com/blog/images/in-post/post-blog-torch1.png">
+<meta property="og:image" content="http://miyunluo.com/blog/images/in-post/post-blog-torch2.png">
+<meta property="og:image" content="http://miyunluo.com/blog/images/in-post/post-blog-torch3.png">
+<meta property="og:image" content="http://miyunluo.com/blog/images/in-post/post-blog-torch4.png">
+<meta property="og:updated_time" content="2020-09-16T04:16:03.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="pytorch自用笔记">
 <meta name="twitter:description" content="“防止以后踩坑”  pytorch 0.4 较之前api有了很大变化 0.0 Tensor在pytorch 0.4 中 Tensor 和 Variable 合并 Tensor可以理解为一个多维矩阵，可以使用 .size() 显示大小，同时也可以和 numpy.array 转换  由于和Variable合并，requires_grad 和 autograd 成了 Tensor 的属性。 Tenso">
-<meta name="twitter:image" content="http://miyunluo.com/images/in-post/post-blog-torch0.png">
+<meta name="twitter:image" content="http://miyunluo.com/blog/images/in-post/post-blog-torch0.png">
     
     
         
@@ -150,10 +150,10 @@
 <p>pytorch 0.4 较之前api有了很大变化</p>
 <h2 id="0-0-Tensor"><a href="#0-0-Tensor" class="headerlink" title="0.0 Tensor"></a>0.0 Tensor</h2><p>在pytorch 0.4 中 Tensor 和 Variable 合并</p>
 <p>Tensor可以理解为一个多维矩阵，可以使用 <code>.size()</code> 显示大小，同时也可以和 numpy.array 转换</p>
-<p><img src="/images/in-post/post-blog-torch0.png" alt=""></p>
+<p><img src="/blog/images/in-post/post-blog-torch0.png" alt=""></p>
 <p>由于和Variable合并，<code>requires_grad</code> 和 <code>autograd</code> 成了 <code>Tensor</code> 的属性。</p>
 <p><code>Tensor</code> 包含的属性，<code>.data</code> 获得Tensor的数据 <code>.item</code> 获得 Tensor的数值大小，<code>.grad</code> 获得梯度，比如</p>
-<p><img src="/images/in-post/post-blog-torch1.png" alt=""></p>
+<p><img src="/blog/images/in-post/post-blog-torch1.png" alt=""></p>
 <p>现在Tensor要求导必须是 floating point dtype</p>
 <p>以及一些其他操作</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 沿行取最大值</span></span><br><span class="line">max_value, max_idx = torch.max(x, dim=<span class="number">1</span>)</span><br><span class="line"><span class="comment"># 沿行求和</span></span><br><span class="line">sum_x = torch.sum(x, dim=<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 增减维度</span></span><br><span class="line">x = x.unsqueeze(<span class="number">0</span>) <span class="comment"># 在第一维增加</span></span><br><span class="line">x = x.unsqueeze(<span class="number">1</span>) <span class="comment"># 在第二维增加</span></span><br><span class="line"></span><br><span class="line">x = x.squeeze(<span class="number">0</span>)   <span class="comment"># 减少第一维度</span></span><br><span class="line">x = x.squeeze()    <span class="comment"># tensor中所有维度为1全部去掉</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 维度交换</span></span><br><span class="line">x = torch.randn(<span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>)</span><br><span class="line"><span class="comment"># permute 重新排列</span></span><br><span class="line">x = x.permute(<span class="number">1</span>, <span class="number">0</span>, <span class="number">2</span>) <span class="comment"># x : torch.Size([4, 3, 5])</span></span><br><span class="line"><span class="comment"># transpose 交换 tensor 中两个维度</span></span><br><span class="line">x = x.transpose(<span class="number">0</span>, <span class="number">2</span>)  <span class="comment"># x : torch.Size([5, 3, 4])</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># view 对 tensor 进行 reshape</span></span><br><span class="line">x = torch.randn(<span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>)</span><br><span class="line">x = x.view(<span class="number">-1</span>, <span class="number">5</span>) <span class="comment"># -1 表示任意大小，5 表示第二维变成 5</span></span><br><span class="line">				  <span class="comment"># x : torch.Size([12, 5])</span></span><br><span class="line">x = x.view(<span class="number">3</span>, <span class="number">20</span>) <span class="comment"># x : torch.Size([3, 20])</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># inplace 操作，直接对tensor操作而不需要另外开辟内存空间。一般是操作符后加_</span></span><br><span class="line">x.unsqueeze_(<span class="number">0</span>)     <span class="comment"># unsqueeze 进行 inplace</span></span><br><span class="line">x.transpose_(<span class="number">1</span>, <span class="number">0</span>)  <span class="comment"># transpose 进行 inplace</span></span><br><span class="line"></span><br><span class="line">x = torch.ones(<span class="number">3</span>, <span class="number">3</span>)</span><br><span class="line">y = torch.ones(<span class="number">3</span>, <span class="number">3</span>)</span><br><span class="line">x.add_(y)	<span class="comment"># add 进行 inplace</span></span><br></pre></td></tr></table></figure>
@@ -162,7 +162,7 @@
 <p>在调用过 backward 后自动计算一次导数，但是再次调用会报错，因为pytorch默认做完一次自动求导后，计算图被丢弃，两次求导需要手动设置。</p>
 </li>
 </ul>
-<p><img src="/images/in-post/post-blog-torch2.png" alt=""></p>
+<p><img src="/blog/images/in-post/post-blog-torch2.png" alt=""></p>
 <p>y对x两次求导，第一次保留计算图，第二次不保留。第二期求导后，梯度变为两次梯度的和，也就是8.2+8.2</p>
 <h2 id="1-0-线性模型与梯度下降"><a href="#1-0-线性模型与梯度下降" class="headerlink" title="1.0 线性模型与梯度下降"></a>1.0 线性模型与梯度下降</h2><p>最简单的线性模型$y=x*w+b$，计算误差函数为$\frac{1}{n}\sum^n_{i=1}(\widehat{y}_i-y_i)^2$</p>
 <p>数分里都学过梯度的意义在于，沿着梯度函数变化最快，为了尽快找到误差的最小值，需要沿着梯度方向更新$w,b$，二者的梯度分别为</p>
@@ -226,9 +226,9 @@
 <p>$$-\frac{1}{m}\sum^m_{i=1}(y^ilog\, sigmod(x^i)+(1-y^i)log(1-sigmod(x^i)))$$</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># pytorch 提供了交叉熵函数</span></span><br><span class="line">criterion = nn.CrossEntropyLoss()</span><br></pre></td></tr></table></figure>
 <h2 id="1-4-参数初始化"><a href="#1-4-参数初始化" class="headerlink" title="1.4 参数初始化"></a>1.4 参数初始化</h2><p>首先，使用Sequential构建模型，可以直接访问参数</p>
-<p><img src="/images/in-post/post-blog-torch3.png" alt=""></p>
+<p><img src="/blog/images/in-post/post-blog-torch3.png" alt=""></p>
 <p>那么就可以直接从numpy赋值 来初始化参数</p>
-<p><img src="/images/in-post/post-blog-torch4.png" alt=""></p>
+<p><img src="/blog/images/in-post/post-blog-torch4.png" alt=""></p>
 <p>使用</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">net1[<span class="number">0</span>].weight.data = torch.from_numpy(np.random.uniform(<span class="number">3</span>, <span class="number">5</span>, size=(<span class="number">4</span>, <span class="number">3</span>)))</span><br></pre></td></tr></table></figure>
 <p>初始化了第一层的权重，可以看到weight的数值发生了变化，bias没有变。</p>
